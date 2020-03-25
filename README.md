@@ -1,9 +1,10 @@
 <h1>Mini Sistema para gerenciar vendas de troféus.</h1><br>
 <p>Principais Funcionalidades<p>
 <ul>
-    <li>Contratar e Demitir Funcionário</li>
-    <li>Cadastrar e Remover Produtos</li>
-    <li>Gerar Relatório Financeiro</li>
+    <li>Cadastrar Venda [Em construção]</li>
+    <li>Contratar e Demitir Funcionário [Implementar]</li>
+    <li>Cadastrar e Remover Produtos [Implementar]</li>
+    <li>Gerar Relatório Financeiro [Implementar]</li>
 </ul>
 <p>Tecnologias Usadas</p>
 <ul>
