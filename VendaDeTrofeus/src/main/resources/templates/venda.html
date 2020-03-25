@@ -4,50 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venda</title>
-    <script>
-    function verificaCampos()){
-    	
-    	/* if(document.getElementById("nome").value() == "" || 
-    			document.getElementById("modelo").value() == "" || 
-    			document.getElementById("tipo").value() == "" ||
-    			document.getElementById("cor").value() == "" ||
-    			document.getElementById("tamanho").value() == "" ||
-    			document.getElementById("quant").value() == "" ||
-    			document.getElementById("valor").value() == "" ||
-    			document.getElementById("pag").value() == "") {
-    		window.alert("Por favor, preencha os campos corretamente.");
-    	}
-    } */
-    	/* /* 
-    	/* for(var k=0;k<8;k++){
-    		if()
-    	} */ */ */
-    	
-    	window.alert("Venda Cadastrada!");
-    }
-    </script>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <h1>Cadastro de Venda</h1>
-    <form method="POST">
-        Nome do Funcionario: <input id="nome" type="text" value="" name="nomeDoFuncionario"><br>
-        Modelo do Troféu: <input id="modelo" list="modelos" value="" name="modeloTrofeu"><br>
-        Tipo do Trofeu: <input id="tipo" type="text" name="tipoTrofeu"><br>
-        Cor do Trófeu: <input id="cor" list="cor" value="" name="corTrofeu"><br>
-        Tamanho: <input id="tamanho" type="text" value="" name="tamanho"><br>
-        Quantidade: <input id="quant" type="text" value="" name="quantidade"><br>
-        Valor Por Unidade: <input id="valor" type="text" value="" name="valorUnitario"><br>
-        Forma de Pagamento: <input id="pag" list="pag" name="formaDePagamento"><br>
-        <button type="submit" onclick="cadastrou()">Cadastrar Venda</button>
+    <form id="formula" method="post">
+        Nome do Funcionario: <input type="text" value="" name="nomeDoFuncionario"><br>
+        Modelo: <input list="modelos" value="" name="modeloTrofeu"><br>
+        Material: <input value="" list="material" type="text" name="tipoTrofeu"><br>
+        Cor: <input list="cor" value="" name="corTrofeu"><br>
+        Tamanho: <input type="text" value="" name="tamanho"><br>
+        Quantidade: <input type="text" value="" name="quantidade"><br>
+        Valor Por Unidade: <input type="text" value="" name="valorUnitario"><br>
+        Forma de Pagamento: <input list="pag" value="" name="formaDePagamento"><br>
+        <button type="submit" onclick="cadastrou()">Cadastrar Venda</button><br><br>
         
         <datalist id="modelos">
-        	<option value="Acrílico retilíneos">
-        	<option value="Acrílico curvados">
-        	<option value="Acrílico dobrados">
-        	<option value="Acrílico perfurados">
-        	<option value="Acrílico mistos">
+        	<option value="Modelo 1">
+        	<option value="Modelo 2">
         </datalist>
         	
+        <datalist id="material">
+        	<option value="Madeira">
+        	<option value="Resina">
+        	<option value="Madeira e Resina">
+        </datalist>
+        
         <datalist id="cor">
         	<option value="Ouro">
         	<option value="Prata">
