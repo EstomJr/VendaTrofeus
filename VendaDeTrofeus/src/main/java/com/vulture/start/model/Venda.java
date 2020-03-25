@@ -19,11 +19,11 @@ public class Venda {
 	private String formaDePagamento;
 	private String nomeDoFuncionario;
 	
-//	public boolean dadosPreenchidos() {
-//		if(modeloTrofeu==null || corTrofeu==null || tipoTrofeu==null || tamanho==0.0 || 
-//				valorUnitario==0.0 || formaDePagamento==null || nomeDoFuncionario==null) return false;
-//		return true;
-//	}
+	public boolean dadosPreenchidos() {
+		if(modeloTrofeu=="" || corTrofeu=="" || tipoTrofeu=="" || tamanho=="" || 
+				valorUnitario=="" || formaDePagamento=="" || nomeDoFuncionario=="") return false;
+		return true;
+	}
 	
 	public int getId() {
 		return id;
