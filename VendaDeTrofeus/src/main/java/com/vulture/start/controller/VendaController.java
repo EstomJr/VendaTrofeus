@@ -21,13 +21,10 @@ public class VendaController{
 	
 	@RequestMapping(value="/cadastro-vendas",method = RequestMethod.POST)
 	public String cadastrarVenda(Venda v){
-		repository.save(v);
-//		try {
-//			repository.save(v);
-//			return "redirect:/cadastro-vendas";
-//		} catch (Exception erro) {
-//			System.out.print("\n\n\n ERRO: "+erro.getMessage()+"\n\n");
-//		}
+		if(v.dadosPreenchidos()==true) {
+			repository.save(v);
+			return "redirect:/cadastro-vendas";
+		}
 		return "redirect:/cadastro-vendas";
 	}
 }
