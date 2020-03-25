@@ -11,4 +11,5 @@
     <li>Spring Boot</li>
     <li>H2 Database</li>
 </ul>
+<p>Projetinho paralelo à disciplina de Modelagem De Dados</p>
 <p><i>Pior é na guerra.</i></p>
