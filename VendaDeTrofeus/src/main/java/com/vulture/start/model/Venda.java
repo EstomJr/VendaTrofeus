@@ -1,5 +1,8 @@
 package com.vulture.start.model;
 
+import java.time.LocalDate;
+import java.util.Calendar;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,6 +21,30 @@ public class Venda {
 	private String valorUnitario;
 	private String formaDePagamento;
 	private String nomeDoFuncionario;
+	private String horario;
+	private String data;
+	
+	public String getHorario() {
+		return horario();
+	}
+	
+	public LocalDate getData() {
+		return data();
+	}
+	
+	public String horario() {
+		int hora, min,seg;
+		Calendar data = Calendar.getInstance();
+		hora = data.get(Calendar.HOUR_OF_DAY);
+		min = data.get(Calendar.MINUTE);
+		seg = data.get(Calendar.SECOND);
+		String horario = hora+":"+min+":"+seg;
+		return horario;
+	}
+	
+	public LocalDate data() {
+		return java.time.LocalDate.now();
+	}
 	
 	public boolean dadosPreenchidos() {
 		if(modeloTrofeu=="" || corTrofeu=="" || tipoTrofeu=="" || tamanho=="" || 
