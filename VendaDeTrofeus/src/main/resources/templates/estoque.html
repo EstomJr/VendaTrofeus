@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org" xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<title>Estoque</title>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
+	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+    
+    	h1, body{
+    		font-family: 'Gotu', sans-serif;
+    		
+    	}
+    	h2, table{
+    		margin:20px;
+    	}
+    </style>
+</head>
+	
+	<body>
+		<nav>
+		   <div class="nav-wrapper">
+		     <a href="/" class="brand-logo right">Vulture | Caixa</a>
+		     <ul id="nav-mobile" class="left hide-on-med-and-down">
+		       	<li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+		       	<li><a href="/cadastro-vendas"><i class="material-icons left">add_circle</i>Cadastrar Venda</a></li>
+		     	<li><a href="/estoque"><i class="material-icons left">format_list_bulleted</i>Lista de Troféus Vendidos</a></li>
+		     </ul>
+		   </div>
+		 </nav>
+		<h2>Lista de Troféus Vendidos</h2>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Vendedor</th>
+					<th>Modelo</th>
+					<th>Cor</th>
+					<th>Material</th>
+					<th>Tamanho</th>
+					<th>Quantidade</th>
+					<th>Valor Unitário</th>
+					<th>Data</th>
+					<th>Horario</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="trofeu : ${trofeus}">
+					<td><span th:text="${trofeu.nomeDoFuncionario}"></span></td>
+					<td><span th:text="${trofeu.modeloTrofeu}"></span></td>
+					<td><span th:text="${trofeu.corTrofeu}"></span></td>
+					<td><span th:text="${trofeu.tipoTrofeu}"></span></td>
+					<td><span th:text="${trofeu.tamanho}"></span></td>
+					<td><span th:text="${trofeu.quantidade}"></span></td>
+					<td><span th:text="${trofeu.valorUnitario}"></span></td>
+					<td><span th:text="${trofeu.data}"></span></td>
+					<td><span th:text="${trofeu.horario}"></span></td>
+				</tr>	
+			</tbody>
+		</table>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+	</body>
+	
+</html>
