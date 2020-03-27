@@ -1,7 +1,5 @@
 package com.vulture.start.controller;
 
-import java.util.Calendar;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.vulture.start.dao.VendaRepository;
-import com.vulture.start.model.Estoque;
 import com.vulture.start.model.Venda;
 
 @Controller
@@ -45,6 +42,8 @@ public class VendaController{
 		mv.addObject("trofeus", estoque);
 		return mv;
 	}
+	
+	
 	
 	
 	

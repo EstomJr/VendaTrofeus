@@ -4,7 +4,9 @@
 
 <head>
 	<title>Estoque</title>
+	<link rel="shortcut icon" href="img/favicon.ico" />
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css"href="css/style.css" >
 	<link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
 	<!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,16 +14,7 @@
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
     
-    	h1, body{
-    		font-family: 'Gotu', sans-serif;
-    		
-    	}
-    	h2, table{
-    		margin:20px;
-    	}
-    </style>
 </head>
 	
 	<body>
@@ -36,7 +29,6 @@
 		   </div>
 		 </nav>
 		<h2>Lista de Troféus Vendidos</h2>
-		
 		<table>
 			<thead>
 				<tr>
@@ -48,10 +40,9 @@
 					<th>Quantidade</th>
 					<th>Valor Unitário</th>
 					<th>Data</th>
-					<th>Horario</th>
+					<th>Horário</th>
 				</tr>
 			</thead>
-			
 			<tbody>
 				<tr th:each="trofeu : ${trofeus}">
 					<td><span th:text="${trofeu.nomeDoFuncionario}"></span></td>

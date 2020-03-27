@@ -1,5 +1,7 @@
 package com.vulture.start.model;
 
+import java.sql.Date;
+import java.sql.Time;
 import java.time.LocalDate;
 import java.util.Calendar;
 
@@ -21,30 +23,8 @@ public class Venda {
 	private String valorUnitario;
 	private String formaDePagamento;
 	private String nomeDoFuncionario;
-	private String horario;
-	private String data;
-	
-	public String getHorario() {
-		return horario();
-	}
-	
-	public LocalDate getData() {
-		return data();
-	}
-	
-	public String horario() {
-		int hora, min,seg;
-		Calendar data = Calendar.getInstance();
-		hora = data.get(Calendar.HOUR_OF_DAY);
-		min = data.get(Calendar.MINUTE);
-		seg = data.get(Calendar.SECOND);
-		String horario = hora+":"+min+":"+seg;
-		return horario;
-	}
-	
-	public LocalDate data() {
-		return java.time.LocalDate.now();
-	}
+	private Time horario;
+	private Date data;
 	
 	public boolean dadosPreenchidos() {
 		if(modeloTrofeu=="" || corTrofeu=="" || tipoTrofeu=="" || tamanho=="" || 
@@ -105,6 +85,22 @@ public class Venda {
 	}
 	public void setNomeDoFuncionario(String nomeDoFuncionario) {
 		this.nomeDoFuncionario = nomeDoFuncionario;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public Time getHorario() {
+		return horario;
+	}
+
+	public void setHorario(Time horario) {
+		this.horario = horario;
 	}
 	
 	
