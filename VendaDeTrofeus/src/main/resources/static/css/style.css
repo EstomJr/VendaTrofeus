@@ -3,16 +3,15 @@ h1, body {
 	text-align: center;
 }
 
-form#vendas {
+form#vendas,form#login {
 	width: 70%;
 	padding-left: 25%;
 	font-size: 18px;
+	padding: auto;
 }
 
-form#login {
-	width:70%;
-	padding-left: 25%;
-	padding-top: 10px;
+form#vendas{
+	margin-top: 50px;
 }
 h2, h3,table,h1,form {
 	margin: 20px;
@@ -34,9 +33,13 @@ a:active {
 	text-decoration: none;
 }
 
+div.input-field.col.s6{
+	text-align: center;
+}
 
-
-
+tr#tabela-estoque {
+	text-align: center;
+}
 
 
 

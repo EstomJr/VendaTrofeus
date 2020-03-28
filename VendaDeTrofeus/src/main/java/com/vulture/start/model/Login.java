@@ -13,6 +13,7 @@ public class Login {
 	private String usuario;
 	private String senha;
 	private String nome;
+	private String cargo;
 	
 	public int getId() {
 		return id;
@@ -40,7 +41,13 @@ public class Login {
 	}
 	@Override
 	public String toString() {
-		return "\n\n\n\n[id=" + id + ", usuario=" + usuario + ", senha=" + senha + ", nome=" + nome + "]\n\n\n\n\n";
+		return "\n\n Login = [id=" + id + ", usuario=" + usuario + ", senha=" + senha + ", nome=" + nome + "]\n\n\n\n\n";
+	}
+	public String getCargo() {
+		return cargo;
+	}
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
 	}
 	
 	

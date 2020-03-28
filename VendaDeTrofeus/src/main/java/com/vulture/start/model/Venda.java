@@ -1,10 +1,6 @@
 package com.vulture.start.model;
 
-import java.sql.Date;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.util.Calendar;
-
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -23,7 +19,6 @@ public class Venda {
 	private String valorUnitario;
 	private String formaDePagamento;
 	private String nomeDoFuncionario;
-	private Time horario;
 	private Date data;
 	
 	public boolean dadosPreenchidos() {
@@ -91,17 +86,8 @@ public class Venda {
 		return data;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setData(Date d) {
+		this.data = d;
 	}
-
-	public Time getHorario() {
-		return horario;
-	}
-
-	public void setHorario(Time horario) {
-		this.horario = horario;
-	}
-	
 	
 }

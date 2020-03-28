@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Venda</title>
+    
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css"href="css/style.css" >
-    <script src="js/script.js"></script>
+    <script src="js/vender.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
 	<!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -21,7 +22,8 @@
 		<div class="nav-wrapper">
 		     <a href="/" class="brand-logo right">Vulture | Caixa</a>
 		     <ul id="nav-mobile" class="left hide-on-med-and-down">
-		       	<li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+                <li><a href="/"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+                <li><a href="/painel-caixa"><i class="material-icons left">home</i>Painel</a></li>
 		    	<li><a href="/cadastro-vendas"><i class="material-icons left">add_circle</i>Cadastrar Venda</a></li>
 				<li><a href="/estoque"><i class="material-icons left">format_list_bulleted</i>Lista de Troféus Vendidos</a></li>
 			</ul>
@@ -37,10 +39,19 @@
         Quantidade: <input type="text" value="" name="quantidade" autocomplete="off"><br>
         Valor Por Unidade: <input type="text" value="" name="valorUnitario" autocomplete="off"><br>
         Forma de Pagamento: <input list="pag" value="" name="formaDePagamento" autocomplete="off"><br>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar Venda
+        
+        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+			<i class="material-icons right">send</i>
+		</button>
+		
+		<button class="btn waves-effect waves-light" type="button" onclick="cancelar()">Cancelar
 			<i class="material-icons right">send</i>
 		</button>
         
+        
+        
+    </form>
+        	
         <datalist id="modelos">
         	<option onscroll="" value="Modelo 1">
         	<option value="Modelo 2">
@@ -63,7 +74,7 @@
         	<option value="Débito">
         	<option value="Crédito">
         </datalist>
-        
     </form>
+    
 </body>
 </html>

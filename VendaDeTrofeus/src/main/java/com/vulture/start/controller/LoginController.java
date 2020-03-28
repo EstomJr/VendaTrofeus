@@ -19,20 +19,25 @@ public class LoginController {
 		return "login";
 	}
 	
-//	@RequestMapping(value = "/realiza-login",method = RequestMethod.GET)
-//	public String realizaLogin(Login login) {
-//		return "index";
-//	}
+	@RequestMapping(value = "/painel-caixa",method = RequestMethod.GET)// PAINEL DO CAIXA
+	public String realizaLogin(Login login) {
+		return "painel-caixa";
+	}
+	
+	@RequestMapping(value = "/painel-gerente",method = RequestMethod.GET) // PAINEL DO GERENTE
+	public String painelGerente(Login login) {
+		return "painel-gerente";
+	}
 	
 	@RequestMapping(value = "/",method = RequestMethod.POST)
 	public String verificaLogin(Login login) {
-		System.out.println(login.getSenha() instanceof String); // true
-		
 		for(Login lv:repository.findAll()) {
 			System.out.println(lv.toString());
-			if (lv.getUsuario().equals(login.getUsuario()) || lv.getSenha().equals(login.getSenha())) {
-				System.out.println(lv.getUsuario() instanceof String);
-				return "index";				
+			if (lv.getUsuario().equals(login.getUsuario()) && lv.getSenha().equals(login.getSenha()) && lv.getCargo().equals("CAIXA")) {
+				System.out.println(login.toString());
+				return "redirect:/painel-caixa"; //GET nesse endpoint			
+			} else if (lv.getUsuario().equals(login.getUsuario()) && lv.getSenha().equals(login.getSenha()) && lv.getCargo().equals("GERENTE")) {
+				return "redirect:/painel-gerente";
 			}
 		}
 		return "redirect:/";

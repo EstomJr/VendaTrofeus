@@ -22,7 +22,8 @@
 		   <div class="nav-wrapper">
 		     <a href="/" class="brand-logo right">Vulture | Caixa</a>
 		     <ul id="nav-mobile" class="left hide-on-med-and-down">
-		       	<li><a href="/"><i class="material-icons left">home</i>Home</a></li>
+		       	<li><a href="/"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+		       	<li><a href="/painel-caixa"><i class="material-icons left">home</i>Painel</a></li>
 		       	<li><a href="/cadastro-vendas"><i class="material-icons left">add_circle</i>Cadastrar Venda</a></li>
 		     	<li><a href="/estoque"><i class="material-icons left">format_list_bulleted</i>Lista de Troféus Vendidos</a></li>
 		     </ul>
@@ -31,7 +32,7 @@
 		<h2>Lista de Troféus Vendidos</h2>
 		<table>
 			<thead>
-				<tr>
+				<tr id="tabela-estoque">
 					<th>Vendedor</th>
 					<th>Modelo</th>
 					<th>Cor</th>
@@ -39,12 +40,11 @@
 					<th>Tamanho</th>
 					<th>Quantidade</th>
 					<th>Valor Unitário</th>
-					<th>Data</th>
-					<th>Horário</th>
+					<th>Data/Horário</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="trofeu : ${trofeus}">
+				<tr th:each="trofeu : ${trofeus}" id="tabela-estoque">
 					<td><span th:text="${trofeu.nomeDoFuncionario}"></span></td>
 					<td><span th:text="${trofeu.modeloTrofeu}"></span></td>
 					<td><span th:text="${trofeu.corTrofeu}"></span></td>
@@ -53,7 +53,6 @@
 					<td><span th:text="${trofeu.quantidade}"></span></td>
 					<td><span th:text="${trofeu.valorUnitario}"></span></td>
 					<td><span th:text="${trofeu.data}"></span></td>
-					<td><span th:text="${trofeu.horario}"></span></td>
 				</tr>	
 			</tbody>
 		</table>
