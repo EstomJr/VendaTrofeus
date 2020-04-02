@@ -24,17 +24,15 @@ public class LoginController {
 		return "painel-caixa";
 	}
 	
-	@RequestMapping(value = "/painel-gerente",method = RequestMethod.GET) // PAINEL DO GERENTE
-	public String painelGerente(Login login) {
-		return "painel-gerente";
-	}
+//	@RequestMapping(value = "/painel-gerente",method = RequestMethod.GET) // PAINEL DO GERENTE
+//	public String painelGerente(Login login) {
+//		return "painel-gerente";
+//	}
 	
 	@RequestMapping(value = "/",method = RequestMethod.POST)
 	public String verificaLogin(Login login) {
 		for(Login lv:repository.findAll()) {
-			System.out.println(lv.toString());
 			if (lv.getUsuario().equals(login.getUsuario()) && lv.getSenha().equals(login.getSenha()) && lv.getCargo().equals("CAIXA")) {
-				System.out.println(login.toString());
 				return "redirect:/painel-caixa"; //GET nesse endpoint			
 			}
 		}

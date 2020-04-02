@@ -25,7 +25,7 @@ public class VendaController{
 	
 	@GetMapping("/campos-invalidos")
 	public String camposInvalidos() {
-		return "/campos-invalidos";
+		return "campos-invalidos";
 	}
 	
 	@RequestMapping(value = "/cadastro-vendas",method = RequestMethod.GET)
@@ -37,16 +37,18 @@ public class VendaController{
 	public String cadastrarVenda(Venda v){
 		Estoque q = er.findById(1).get();
 		if(v.dadosPreenchidos()==true ){
-			System.out.println("Entrou no 1 if da venda");
-			Date d = new Date();
-			v.setData(d);
-			int qntVenda = v.getQuantidade();
+			Date d = new Date(); 
+			v.setData(d); // Pegando data atual
+			double total = Integer.parseInt(v.getQuantidade())*Double.parseDouble(v.getValorUnitario());
+			v.setTotal(String.valueOf(total)); // Total da compra em R$
+			int qntVenda = Integer.parseInt(v.getQuantidade());
 			int qntAtual = q.getQuantidade();
-			System.out.println("Venda: "+qntVenda+"\nEstoque: "+qntAtual);
 			if(qntAtual>=qntVenda) {
 				q.setQuantidade(qntAtual - qntVenda);
 				repository.save(v);
 				return "redirect:/painel-caixa";
+			} else {
+				return "estoque-invalido";
 			}
 		}
 		return "redirect:/campos-invalidos";

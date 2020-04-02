@@ -41,6 +41,7 @@
 					<th>Quantidade</th>
 					<th>Valor Unitário</th>
 					<th>Data/Horário</th>
+					<th>Total R$</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -53,6 +54,7 @@
 					<td><span th:text="${trofeu.quantidade}"></span></td>
 					<td><span th:text="${trofeu.valorUnitario}"></span></td>
 					<td><span th:text="${trofeu.data}"></span></td>
+					<td>R$ <span th:text="${trofeu.total}"></span></td>
 				</tr>	
 			</tbody>
 		</table>

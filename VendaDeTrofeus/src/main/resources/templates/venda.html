@@ -4,17 +4,13 @@
     <script src="materialize/js/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venda</title>
-    
+	<title>Venda</title>
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link rel="stylesheet" type="text/css"href="css/style.css" >
     <script src="js/vender.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gotu&display=swap" rel="stylesheet">
-	<!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
@@ -30,8 +26,8 @@
 		</div>
 	</nav>
 	<h2>Cadastro de Venda</h2>
-    <form class="container" method="post" style="text-align: left;">
-        Nome do Funcionario: <input type="text" value="" name="nomeDoFuncionario" autocomplete="off"><br>
+    <form class="container" method="post">
+        Nome do Funcionario: <input id="nome" type="text" value="" name="nomeDoFuncionario" autocomplete="off"><br>
         <div class="row">
 	        <div class="input-field col s4">
 	        	Modelo: <input list="modelos" value="" name="modeloTrofeu" autocomplete="off"><br>
@@ -55,17 +51,16 @@
         	</div>
         </div>
         Forma de Pagamento: <input list="pag" value="" name="formaDePagamento" autocomplete="off"><br>
-        
-        <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
-			<i class="material-icons right">send</i>
+		<button id="btnVenda" class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
+		<i class="material-icons right">send</i>
 		</button>
+
+		<button class="btn waves-effect waves-light" type="button" onclick="cancelar();">Cancelar</button>
 		
-		<button class="btn waves-effect waves-light" type="button" onclick="cancelar()">Cancelar</button>
-   
     </form>
-        	
+	
         <datalist id="modelos">
-        	<option onscroll="" value="Modelo 1">
+        	<option value="Modelo 1">
         	<option value="Modelo 2">
         </datalist>
         	
@@ -86,7 +81,5 @@
         	<option value="Débito">
         	<option value="Crédito">
         </datalist>
-   
-    
 </body>
 </html>
