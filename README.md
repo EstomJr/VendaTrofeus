@@ -1,4 +1,4 @@
-<h1>Mini Sistema para gerenciar vendas de troféus.</h1><br>
+<h1>Mini Sistema Para Vendas de Troféus.</h1><br>
 <p>Principais Funcionalidades<p>
 <ul>
     <li>Cadastrar Venda [Quase lá]</li>
