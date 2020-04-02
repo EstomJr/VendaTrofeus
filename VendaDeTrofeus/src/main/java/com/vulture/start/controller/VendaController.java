@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.vulture.start.dao.EstoqueRepository;
 import com.vulture.start.dao.VendaRepository;
 import com.vulture.start.model.Estoque;
 import com.vulture.start.model.Venda;
@@ -18,6 +19,9 @@ public class VendaController{
 
 	@Autowired
 	private VendaRepository repository;
+	
+	@Autowired
+	private EstoqueRepository er;
 	
 	@GetMapping("/campos-invalidos")
 	public String camposInvalidos() {
@@ -31,12 +35,19 @@ public class VendaController{
 	
 	@RequestMapping(value="/cadastro-vendas",method = RequestMethod.POST)
 	public String cadastrarVenda(Venda v){
-		Estoque q = new Estoque();
+		Estoque q = er.findById(1).get();
 		if(v.dadosPreenchidos()==true ){
+			System.out.println("Entrou no 1 if da venda");
 			Date d = new Date();
 			v.setData(d);
-			repository.save(v);
-			return "redirect:/cadastro-vendas";
+			int qntVenda = v.getQuantidade();
+			int qntAtual = q.getQuantidade();
+			System.out.println("Venda: "+qntVenda+"\nEstoque: "+qntAtual);
+			if(qntAtual>=qntVenda) {
+				q.setQuantidade(qntAtual - qntVenda);
+				repository.save(v);
+				return "redirect:/painel-caixa";
+			}
 		}
 		return "redirect:/campos-invalidos";
 	}

@@ -14,16 +14,16 @@ public class Venda {
 	private String modeloTrofeu;
 	private String corTrofeu;
 	private String tipoTrofeu;
-	private String tamanho;
-	private String quantidade;
-	private String valorUnitario;
+	private double tamanho;
+	private int quantidade;
+	private double valorUnitario;
 	private String formaDePagamento;
 	private String nomeDoFuncionario;
 	private Date data;
 	
 	public boolean dadosPreenchidos() {
-		if(modeloTrofeu=="" || corTrofeu=="" || tipoTrofeu=="" || tamanho=="" || 
-				valorUnitario=="" || formaDePagamento=="" || nomeDoFuncionario=="") return false;
+		if(modeloTrofeu=="" || corTrofeu=="" || tipoTrofeu=="" || tamanho==0.0 || 
+				valorUnitario==0.0 || formaDePagamento=="" || nomeDoFuncionario=="") return false;
 		return true;
 	}
 	
@@ -51,22 +51,22 @@ public class Venda {
 	public void setTipoTrofeu(String tipoTrofeu) {
 		this.tipoTrofeu = tipoTrofeu;
 	}
-	public String getTamanho() {
+	public double getTamanho() {
 		return tamanho;
 	}
-	public void setTamanho(String tamanho) {
+	public void setTamanho(double tamanho) {
 		this.tamanho = tamanho;
 	}
-	public String getQuantidade() {
+	public int getQuantidade() {
 		return quantidade;
 	}
-	public void setQuantidade(String quantidade) {
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	public String getValorUnitario() {
+	public double getValorUnitario() {
 		return valorUnitario;
 	}
-	public void setValorUnitario(String valorUnitario) {
+	public void setValorUnitario(double valorUnitario) {
 		this.valorUnitario = valorUnitario;
 	}
 	public String getFormaDePagamento() {

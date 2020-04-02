@@ -30,26 +30,38 @@
 		</div>
 	</nav>
 	<h2>Cadastro de Venda</h2>
-    <form id="vendas" method="post" style="text-align: left;">
+    <form class="container" method="post" style="text-align: left;">
         Nome do Funcionario: <input type="text" value="" name="nomeDoFuncionario" autocomplete="off"><br>
-        Modelo: <input list="modelos" value="" name="modeloTrofeu" autocomplete="off"><br>
-        Material: <input value="" list="material" type="text" name="tipoTrofeu" autocomplete="off"><br>
-        Cor: <input list="cor" value="" name="corTrofeu" autocomplete="off"><br>
-        Tamanho: <input type="text" value="" name="tamanho" autocomplete="off"><br>
-        Quantidade: <input type="text" value="" name="quantidade" autocomplete="off"><br>
-        Valor Por Unidade: <input type="text" value="" name="valorUnitario" autocomplete="off"><br>
+        <div class="row">
+	        <div class="input-field col s4">
+	        	Modelo: <input list="modelos" value="" name="modeloTrofeu" autocomplete="off"><br>
+	        </div>
+	        <div class="input-field col s4">
+	        	Material: <input value="" list="material" type="text" name="tipoTrofeu" autocomplete="off"><br>
+	        </div>
+	        <div class="input-field col s4">
+	        	Cor: <input list="cor" value="" name="corTrofeu" autocomplete="off"><br>
+        	</div>
+        </div>
+        <div class="row">
+	        <div class="input-field col s4">
+	        	Tamanho: <input type="text" value="" name="tamanho" autocomplete="off"><br>
+	        </div>
+	        <div class="input-field col s4">
+	        	Quantidade: <input type="text" value="" name="quantidade" autocomplete="off"><br>
+	        </div>
+	        <div class="input-field col s4">
+	        	Valor Por Unidade: <input type="text" value="" name="valorUnitario" autocomplete="off"><br>
+        	</div>
+        </div>
         Forma de Pagamento: <input list="pag" value="" name="formaDePagamento" autocomplete="off"><br>
         
         <button class="btn waves-effect waves-light" type="submit" name="action">Cadastrar
 			<i class="material-icons right">send</i>
 		</button>
 		
-		<button class="btn waves-effect waves-light" type="button" onclick="cancelar()">Cancelar
-			<i class="material-icons right">send</i>
-		</button>
-        
-        
-        
+		<button class="btn waves-effect waves-light" type="button" onclick="cancelar()">Cancelar</button>
+   
     </form>
         	
         <datalist id="modelos">
@@ -74,7 +86,7 @@
         	<option value="Débito">
         	<option value="Crédito">
         </datalist>
-    </form>
+   
     
 </body>
 </html>

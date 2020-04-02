@@ -36,8 +36,6 @@ public class LoginController {
 			if (lv.getUsuario().equals(login.getUsuario()) && lv.getSenha().equals(login.getSenha()) && lv.getCargo().equals("CAIXA")) {
 				System.out.println(login.toString());
 				return "redirect:/painel-caixa"; //GET nesse endpoint			
-			} else if (lv.getUsuario().equals(login.getUsuario()) && lv.getSenha().equals(login.getSenha()) && lv.getCargo().equals("GERENTE")) {
-				return "redirect:/painel-gerente";
 			}
 		}
 		return "redirect:/";
